@@ -1,5 +1,5 @@
 # Aufgabe 2 WPMT9
-Hier werden der Verlauf der zwei Aufgabenteile kommentiert. Für den Python Teil sind die Kommentare in dem Jupyter Notebook zu finden.
+Hier wird der Verlauf der zwei Aufgabenteile kommentiert. Für den Python Teil sind die Kommentare in dem Jupyter Notebook zu finden.
 
 -----
 
@@ -17,7 +17,7 @@ Hier werden der Verlauf der zwei Aufgabenteile kommentiert. Für den Python Teil
 1. Python Aufgabe
 
 
-   Der Verlauf und Ergebnisse der Bearbeitung der Datei Inventory der Seattle Public Library befindet sich [in diesem Jupyter Notebook](https://github.com/monalto/WPMT9.2/blob/master/Inventur%20der%20Seattle%20Public%20Library.ipynb).
+   Der Verlauf und die Ergebnisse der Bearbeitung der Datei Inventory der Seattle Public Library befindet sich [in diesem Jupyter Notebook](https://github.com/monalto/WPMT9.2/blob/master/Inventur%20der%20Seattle%20Public%20Library.ipynb).
 
 2. Shell Aufgabe Datenbereinigung
  
@@ -25,7 +25,7 @@ Hier werden der Verlauf der zwei Aufgabenteile kommentiert. Für den Python Teil
 
     Danach wurden die Zeilen, die keine issn Nummer hatten mit dem Befehl ```grep-v 'eng'``` enfernt.
 
-    Anschließend werden die Leerstellen, die Wörter ISSN, issn und Issn s```ed 's/ISSN://g;s/issn://g;s/Issn://g'``` entfernt um die Daten gleichmäßig und ohne Unterbrechungen darzustellen. ```sed 's/^[[:space:]]*//g```
+    Anschließend werden die Leerstellen, die Wörter ISSN, issn und Issn ```sed 's/ISSN://g;s/issn://g;s/Issn://g'``` entfernt um die Daten gleichmäßig und ohne Unterbrechungen darzustellen. ```sed 's/^[[:space:]]*//g```
 
     Es fehlt nur noch die Dopplungen zu löschen und die Daten zu sortieren. Dafür wird der Befehl ```sort -u``` (Dopplungen entfernen) ```sort -n``` (numerische Sortierung) benutzt.
 
@@ -55,20 +55,20 @@ Hier werden der Verlauf der zwei Aufgabenteile kommentiert. Für den Python Teil
 
 In diesem Fall werden mehrere Wörter in einem Dokument gezählt. Deswegen wird ein Loop erstellt.
 
-Zuerst werden die Wörter definiert, die in das Dokument gesucht werden. Die werden in der Variable word zusammengestellt. ```"history" "historical" "praehistorische" "historische"``` In dieselbe Zeile fängt der Loop mit dem Befehl ```for``` an 
+Zuerst werden die Wörter definiert, welche in dem Dokument gesucht werden sollen. Diese werden in der Variable ```word``` zusammengefasst. ```"history" "historical" "praehistorische" "historische"``` In der selben Zeile fängt der Loop mit dem Befehl ```for``` an:
 
 ```for word in "history" "historical" "praehistorische" "historische"```
 
-Danach kommt der Befehl ```do``` um zu zeigen, welche Aktion kommt, die Wörterzählung ```grep -woi``` (für Klein- und Großschreibung). Hier wurde auch diese Variabel definiert weil sie aus mehrere Schritte (Zählung von Wörtern und Linien und Bereinigung der Leerezeilen)besteht: 
+Danach kommt der Befehl ```do``` um zu zeigen, welche Aktion begonnen wird, die Wörterzählung ```grep -woi``` (für Groß- und Kleinschreibung). Hier wurde auch die Variabel ```COUNT``` definiert weil sie aus mehreren Schritten (Zählung von Wörtern und Linien sowie Bereinigung der Leerezeilen) besteht: 
 
 ```COUNT=$(grep -woi "$word" 2020-05-23-Article_list_dirty.tsv | wc -l | sed 's/^[[:space:]]*//')```
 
-Der letzte Schritt ist die Ergebnise mit echo abzurufen und mit dem Befehl done den Script beenden:
+Der letzte Schritt ist die Ergebnisse mit ```echo``` abzurufen und mit dem Befehl ```done``` den Script zu beenden:
 
 ```echo "$word:$COUNT"```
 ```done```
 
-Abschließend wird den Script geprüpft. Das Wort history taucht 142 mal im Dokument usw.
+Abschließend wird das Script geprüpft. Das Wort history taucht beispielsweis 142 Mal im Dokument auf.
 
 ```$ bash script_wortnutzung.sh```                                                    ```history:142```                                                                     ```historical:28```                                                                   ```praehistorische:2```                                                               ```historische:9```
 
