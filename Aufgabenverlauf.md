@@ -23,13 +23,13 @@ Der Verlauf und Ergebnisse der Bearbeitung der Datei Inventory der Seattle Publi
 
     Anschließend werden die Leerstellen, die Wörter ISSN, issn und Issn s```ed 's/ISSN://g;s/issn://g;s/Issn://g'``` entfernt um die Daten gleichmäßig und ohne Unterbrechungen zu haben. ```sed 's/^[[:space:]]*//g```
 
-    Es fehlt nur die Dopplungen zu löschen und die Daten zu sortieren. Dafür wird der Befehl ```sort -u``` (Dopplungen zu entfernen) > Es fehlt nur die Dopplungen zu löschen und die Daten zu sortieren. Dafür wird der Befehl ```sort -u``` (Dopplungen zu entfernen) sort -n (numerische Sortierung) benutzt.
+    Es fehlt nur die Dopplungen zu löschen und die Daten zu sortieren. Dafür wird der Befehl ```sort -u``` (Dopplungen zu entfernen) ```sort -n``` (numerische Sortierung) benutzt.
 
     Das Ergebnis wurde in eine neue Datei mit den heutigen Datum in Format ISO 8601 (YYYY-MM-DD) gespeichert und zwar 2020-07-05-issns-years-clean.tsv
 
     Um dieses Ergebnis zu Überprüfen wurde die Date mit der Lösung verglichen ```diff``` und es gab keinen numerischen Unterschied. Nur in meine Datei sind die namen der Spalten geblieben ISSN und Date.
-    
-    ```$ diff 2020-05-23-Dates_and_ISSNs_v1.tsv 2020-07-05-issns_years_clean.tsv```
+
+```$ diff 2020-05-23-Dates_and_ISSNs_v1.tsv 2020-07-05-issns_years_clean.tsv```
 ```0a1,2```
 ```>```
 ```> ISSN  Date```
@@ -45,6 +45,7 @@ sed 's/^[[:space:]]*// issns_years3.tsv > issns_years4.tsv'
 sort -u issns_years4.tsv > issns_years5.tsv
 sort -n issns_years5.tsv > 2020-07-05-issns_years_clean.tsv
 cat 2020-07-05-issns_years_clean.tsv```
+
 
 3. Shell Aufgabe Wortnutzungsstatistiken
 
