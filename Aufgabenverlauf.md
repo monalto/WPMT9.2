@@ -38,6 +38,8 @@ Hier werden der Verlauf der zwei Aufgabenteile kommentiert. Für den Python Teil
 ```>```
 ```> ISSN  Date```
 
+2.1 Script
+
 ```#!/bin/bash```
 
 ```# Mit diesem Script werden die Spalten issn und Jahr bereinigt```
@@ -70,7 +72,7 @@ Abschließend wird den Script geprüpft. Das Wort history taucht 142 mal im Doku
 
 ```$ bash script_wortnutzung.sh```                                                    ```history:142```                                                                     ```historical:28```                                                                   ```praehistorische:2```                                                               ```historische:9```
 
-3.1 Script zur Wortnutzungsstatistik
+3.1 Script
 
 ```#!bin/bash```
 ```# In diesem Script wird ein Wortnutzungsstatistik erstellt```
