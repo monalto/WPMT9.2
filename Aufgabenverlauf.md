@@ -6,9 +6,11 @@ Hier werden der Verlauf der zwei Aufgabenteile kommentiert. Für den Python Teil
 ## Inhalt
 1. Python Aufgabe
 2. Shell Aufgabe Datenbereinigung
-2.1 Script
+    
+    2.1 Script
 3. Shell Aufgabe Wortnutzungsstatistik
-2.2 Script
+    
+    2.2 Script
 3. Quellen
 ------
 
