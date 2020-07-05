@@ -8,8 +8,8 @@ Hier werden der Verlauf der zwei Aufgabenteile kommentiert. Für den Python Teil
 2. Shell Aufgabe Datenbereinigung
 2.1 Script
 3. Shell Aufgabe Wortnutzungsstatistik
-3.1 Script
-4. Quellen
+2.2 Script
+3. Quellen
 ------
 
 1. Python Aufgabe
