@@ -14,21 +14,21 @@ Hier werden der Verlauf der zwei Aufgabenteile kommentiert. Für den Python Teil
 
 1. Python Aufgabe
 
- Der Verlauf und Ergebnisse der Bearbeitung der Datei Inventory der Seattle Public Library befindet sich [in diesem Jupyter Notebook](https://github.com/monalto/WPMT9.2/blob/master/Inventur%20der%20Seattle%20Public%20Library.ipynb).
+   Der Verlauf und Ergebnisse der Bearbeitung der Datei Inventory der Seattle Public Library befindet sich [in diesem Jupyter Notebook](https://github.com/monalto/WPMT9.2/blob/master/Inventur%20der%20Seattle%20Public%20Library.ipynb).
 
 2. Shell Aufgabe Datenbereinigung
  
-    Zuerst wurde die Datei 2020-05-23-Article_list_dirty angeschaut und die Spalten identifiziert, die gezogen werden müssen. Die waren die Nummer 5 und Nummer 12. Der Befehl ist dann ```cut -f 5,12``` . Diese Spalten wurden in eine Datei gespeichert.
+    Zuerst wurde die Datei 2020-05-23-Article_list_dirty angeschaut und die Spalten identifiziert, welche herausgezogen werden müssen. Diese waren die Nummer 5 und Nummer 12. Der Befehl ist ```cut -f 5,12``` . Diese Spalten wurden in eine Datei gespeichert.
 
-    Danach wurden die Zeilen, die keine issn Nummer hatten enfernt mit dem Befehl ```grep-v 'eng'```
+    Danach wurden die Zeilen, die keine issn Nummer hatten mit dem Befehl ```grep-v 'eng'``` enfernt.
 
-    Anschließend werden die Leerstellen, die Wörter ISSN, issn und Issn s```ed 's/ISSN://g;s/issn://g;s/Issn://g'``` entfernt um die Daten gleichmäßig und ohne Unterbrechungen zu haben. ```sed 's/^[[:space:]]*//g```
+    Anschließend werden die Leerstellen, die Wörter ISSN, issn und Issn s```ed 's/ISSN://g;s/issn://g;s/Issn://g'``` entfernt um die Daten gleichmäßig und ohne Unterbrechungen darzustellen. ```sed 's/^[[:space:]]*//g```
 
-    Es fehlt nur die Dopplungen zu löschen und die Daten zu sortieren. Dafür wird der Befehl ```sort -u``` (Dopplungen zu entfernen) ```sort -n``` (numerische Sortierung) benutzt.
+    Es fehlt nur noch die Dopplungen zu löschen und die Daten zu sortieren. Dafür wird der Befehl ```sort -u``` (Dopplungen entfernen) ```sort -n``` (numerische Sortierung) benutzt.
 
-    Das Ergebnis wurde in eine neue Datei mit den heutigen Datum in Format ISO 8601 (YYYY-MM-DD) gespeichert und zwar 2020-07-05-issns-years-clean.tsv
+    Das Ergebnis wurde in eine neue Datei mit dem heutigen Datum im Format ISO 8601 (YYYY-MM-DD) gespeichert also als 2020-07-05-issns-years-clean.tsv
 
-    Um dieses Ergebnis zu Überprüfen wurde die Date mit der Lösung verglichen ```diff``` und es gab keinen numerischen Unterschied. Nur in meine Datei sind die namen der Spalten geblieben ISSN und Date.
+    Um dieses Ergebnis zu Überprüfen wurde die Date mit der Lösung verglichen ```diff``` und es gab keinen numerischen Unterschied. In meiner Datei sind nur die Namen der Spalten ISSN und Date geblieben.
 
 ```$ diff 2020-05-23-Dates_and_ISSNs_v1.tsv 2020-07-05-issns_years_clean.tsv```
 ```0a1,2```
