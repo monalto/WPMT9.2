@@ -49,9 +49,36 @@ Hier werden der Verlauf der zwei Aufgabenteile kommentiert. Für den Python Teil
 
 3. Shell Aufgabe Wortnutzungsstatistik
 
-Zuerst wurde die Datei 
+In diesem Fall werden mehrere Wörter in einem Dokument gezählt. Deswegen wird ein Loop erstellt.
+
+Zuerst werden die Wörter definiert, die in das Dokument gesucht werden. Die werden in der Variable word zusammengestellt. ```"history" "historical" "praehistorische" "historische"``` In dieselbe Zeile fängt der Loop mit dem Befehl ```for``` an 
+
+```for word in "history" "historical" "praehistorische" "historische"```
+
+Danach kommt der Befehl ```do``` um zu zeigen, welche Aktion kommt, die Wörterzählung ```grep -woi``` (für Klein- und Großschreibung). Hier wurde auch diese Variabel definiert weil sie aus mehrere Schritte (Zählung von Wörtern und Linien und Bereinigung der Leerezeilen)besteht: 
+
+```COUNT=$(grep -woi "$word" 2020-05-23-Article_list_dirty.tsv | wc -l | sed 's/^[[:space:]]*//')```
+
+Der letzte Schritt ist die Ergebnise mit echo abzurufen und mit dem Befehl done den Script beenden:
+
+```echo "$word:$COUNT"```
+```done```
+
+Abschließend wird den Script geprüpft. Das Wort history taucht 142 mal im Dokument usw.
+
+```$ bash script_wortnutzung.sh```                                                    ```history:142```                                                                     ```historical:28```                                                                   ```praehistorische:2```                                                               ```historische:9```
 
 3.1 Script zur Wortnutzungsstatistik
+
+```#!bin/bash```
+```# In diesem Script wird ein Wortnutzungsstatistik erstellt```
+
+```for word in "history" "historical" "praehistorische" "historische"```
+```do```
+```COUNT=$(grep -woi "$word" 2020-05-23-Article_list_dirty.tsv | wc -l | sed 's/^[[:space:]]*//')```
+```echo "$word:$COUNT"```
+```done```
+
 
 4. Quellen
 
