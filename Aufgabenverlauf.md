@@ -13,7 +13,8 @@ Hier werden der Verlauf der zwei Aufgabenteile kommentiert. Für den Python Teil
 ------
 
 1. Python Aufgabe
-Der Verlauf und Ergebnisse der Bearbeitung der Datei Inventory der Seattle Public Library befindet sich [in diesem Jupyter Notebook](https://github.com/monalto/WPMT9.2/blob/master/Inventur%20der%20Seattle%20Public%20Library.ipynb).
+
+ Der Verlauf und Ergebnisse der Bearbeitung der Datei Inventory der Seattle Public Library befindet sich [in diesem Jupyter Notebook](https://github.com/monalto/WPMT9.2/blob/master/Inventur%20der%20Seattle%20Public%20Library.ipynb).
 
 2. Shell Aufgabe Datenbereinigung
  
