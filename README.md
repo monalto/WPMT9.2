@@ -10,4 +10,4 @@ Folgende Dateien sind hier zu finden:
 * Daten zur bereinigen 
 * Shell Script zur Bereinigung der Daten
 * Lösung die zu meinem Script gepasst hat
-* Shell Script erstellt um für mehrere Dateien als Wortnutzungsstatistiken zu dienen
+* Shell Script erstellt um als Wortnutzungsstatistiken zu dienen
