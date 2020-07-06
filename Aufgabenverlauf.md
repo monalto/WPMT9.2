@@ -68,7 +68,7 @@ Der letzte Schritt ist die Ergebnisse mit ```echo``` abzurufen und mit dem Befeh
 ```echo "$word:$COUNT"```
 ```done```
 
-Abschließend wird das Script geprüpft. Das Wort history taucht beispielsweis 142 Mal im Dokument auf.
+Abschließend wird der Script geprüpft. Das Wort history taucht beispielsweis 142 Mal im Dokument auf.
 
 ```$ bash script_wortnutzung.sh```                                                    ```history:142```                                                                     ```historical:28```                                                                   ```praehistorische:2```                                                               ```historische:9```
 
